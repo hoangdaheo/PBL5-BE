@@ -1,7 +1,7 @@
 const db = require("../../Connect/Connect");
-const GetResult = require("../../model/Result/GetResult.model");
+const GetResult = require("../../model/Result/GetRecentResult");
 module.exports = function (app) {
-  app.get("/Result", function (req, res) {
+  app.get("/RecentResult", function (req, res) {
     GetResult(db, function (dataString, token) {
       res.json({
         dataString: dataString,

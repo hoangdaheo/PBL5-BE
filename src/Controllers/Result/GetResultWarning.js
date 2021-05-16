@@ -5,7 +5,7 @@ module.exports = function (app) {
     GetResultWarning(db, function (dataString, token) {
       res.json({
         dataString: dataString,
-        token: token,
+        data: token,
       });
     });
   });
