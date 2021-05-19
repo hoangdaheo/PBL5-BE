@@ -1,7 +1,7 @@
 var dataString = "";
 module.exports = function (db, callback) {
   let sql = `
-  SELECT result.temperature,BB.studentID,BB.name,BB.address,BB.age,DATE_FORMAT(BB.recentTime,'%H:%i:%s') TIMEONLY
+  SELECT BB.studentID,BB.name,BB.address,BB.age,result.temperature,DATE_FORMAT(BB.recentTime,'%M %d %Y %H:%i:%s') TIMEONLY
     FROM
 (SELECT 
 	studentID,

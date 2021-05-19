@@ -1,6 +1,19 @@
 var dataString = "";
-module.exports = function (db, id,callback) {
-  let sql = `SELECT temperature,DATE_FORMAT(createAtTime,'%H:%i:%s') TIMEONLY FROM result WHERE idUser = ${id} `;
+module.exports = function (db, id,time,callback) {
+  let sql = `SELECT
+    temperature,
+    DATE_FORMAT(createAtTime, '%H:%i:%s') TIMEONLY
+FROM
+    (
+    SELECT
+        *
+    FROM
+        result
+    WHERE
+        createAtTime LIKE '%${time}%'
+) AS DMY
+WHERE
+    idUser = ${id} `;
   db.query(sql, function (err, results, fields) {
     if (err) {
       throw err;
