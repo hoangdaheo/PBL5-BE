@@ -7,8 +7,10 @@ var GetStudent = require("./User/GetUserByIDRoll");
 var GetResultWarning = require("./Result/GetResultWarning");
 var GetResultInday = require("./Result/GetResultInday");
 var GetUser = require("./User/GetUsers");
+var GetUserID = require("./User/GetUserByID");
 var GetRecentResult = require("./Result/GetRecentResult");
 var GetTempAndTime = require("./Result/GetTempAndTime");
+var GetResultCountByDay = require ("./Result/GetResultCountByDay");
 module.exports = function (app) {
   Login(app);
   Register(app);
@@ -21,4 +23,6 @@ module.exports = function (app) {
   GetUser(app);
   GetRecentResult(app);
   GetTempAndTime(app);
+  GetUserID(app);
+  GetResultCountByDay(app);
 };

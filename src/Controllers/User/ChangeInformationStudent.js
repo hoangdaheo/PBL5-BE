@@ -5,13 +5,14 @@ module.exports = function (app) {
     console.log("?");
     ChangInformation(
       db,
-      req.body.idStudent,
+      req.body.id,
       req.body.name,
       req.body.age,
       req.body.sex,
-      req.body.studentID,
+      
       req.body.idFaculty,
       req.body.address,
+
       function (dataString) {
         res.json({
           dataString: dataString,

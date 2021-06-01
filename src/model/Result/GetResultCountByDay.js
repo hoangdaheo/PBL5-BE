@@ -1,6 +1,6 @@
 var dataString = "";
 module.exports = function (db, callback) {
-  let sql = `SELECT user.id,user.NAME ,temperature,user.sex,DATE_FORMAT(createAtTime,'%M %d %Y %H:%i:%s')  FROM result INNER JOIN user ON user.id = result.idUser `;
+  let sql = `SELECT date,COUNT(date) as result FROM (SELECT DATE_FORMAT(createAtTime,'%M %d %Y') as date FROM result) as X GROUP BY date`;
   db.query(sql, function (err, results, fields) {
     if (err) {
       throw err;

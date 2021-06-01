@@ -13,7 +13,7 @@ FROM
         createAtTime LIKE '%${time}%'
 ) AS DMY
 WHERE
-    idUser = ${id} `;
+    idUser = ${id} ORDER BY TIMEONLY asc`;
   db.query(sql, function (err, results, fields) {
     if (err) {
       throw err;
