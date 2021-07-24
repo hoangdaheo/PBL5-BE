@@ -1,13 +1,13 @@
 var mysql = require("mysql");
 var connection = mysql.createConnection({
-  // host: "td5l74lo6615qq42.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-  // user: "i19a01vupo85tzim",
-  // password: "tzmul8dp2yslx7d1",
-  // database: "n5mfw5fdhxyvngv3",
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "pbl5",
+  // host: "localhost",
+  // user: "root",
+  // password: "root",
+  // database: "pbl5-version2",
+  host: "us-cdbr-east-03.cleardb.com",
+  user: "b73e8cc68166ea",
+  password: "77ad9b49",
+  database: "heroku_2e6d56b8e4b0ff6",
 });
 
 connection.connect(function (err) {
@@ -17,9 +17,3 @@ connection.connect(function (err) {
 });
 
 module.exports = connection;
-
-// host: "us-cdbr-east-03.cleardb.com",
-//   user: "bf525d49fe0172",
-//   password: "026c8444",
-//   database: "heroku_e3fa5a40dc31d04",
-// mysql://bf525d49fe0172:026c8444@us-cdbr-east-03.cleardb.com/heroku_e3fa5a40dc31d04?reconnect=true
